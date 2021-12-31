@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MealDataSet" targetNamespace="http://tempuri.org/MealDataSet.xsd" xmlns:mstns="http://tempuri.org/MealDataSet.xsd" xmlns="http://tempuri.org/MealDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ThaiRestaurantConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ThaiRestaurantConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Thai_restaurant.Properties.Settings.GlobalReference.Default.ThaiRestaurantConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Meal_ViewTableAdapter" GeneratorDataComponentClassName="Meal_ViewTableAdapter" Name="Meal_View" UserDataComponentName="Meal_ViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ThaiRestaurantConnectionString (Settings)" DbObjectName="dbo.Meal_View" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Meal_id, Meal_name, Meal_cost, Category_name FROM dbo.Meal_View</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Meal_id" DataSetColumn="Meal_id" />
+              <Mapping SourceColumn="Meal_name" DataSetColumn="Meal_name" />
+              <Mapping SourceColumn="Meal_cost" DataSetColumn="Meal_cost" />
+              <Mapping SourceColumn="Category_name" DataSetColumn="Category_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MealDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="MealDataSet" msprop:Generator_UserDSName="MealDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Meal_View" msprop:Generator_TableClassName="Meal_ViewDataTable" msprop:Generator_TableVarName="tableMeal_View" msprop:Generator_TablePropName="Meal_View" msprop:Generator_RowDeletingName="Meal_ViewRowDeleting" msprop:Generator_RowChangingName="Meal_ViewRowChanging" msprop:Generator_RowEvHandlerName="Meal_ViewRowChangeEventHandler" msprop:Generator_RowDeletedName="Meal_ViewRowDeleted" msprop:Generator_UserTableName="Meal_View" msprop:Generator_RowChangedName="Meal_ViewRowChanged" msprop:Generator_RowEvArgName="Meal_ViewRowChangeEvent" msprop:Generator_RowClassName="Meal_ViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Meal_id" msprop:Generator_ColumnVarNameInTable="columnMeal_id" msprop:Generator_ColumnPropNameInRow="Meal_id" msprop:Generator_ColumnPropNameInTable="Meal_idColumn" msprop:Generator_UserColumnName="Meal_id" type="xs:int" />
+              <xs:element name="Meal_name" msprop:Generator_ColumnVarNameInTable="columnMeal_name" msprop:Generator_ColumnPropNameInRow="Meal_name" msprop:Generator_ColumnPropNameInTable="Meal_nameColumn" msprop:Generator_UserColumnName="Meal_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Meal_cost" msprop:Generator_ColumnVarNameInTable="columnMeal_cost" msprop:Generator_ColumnPropNameInRow="Meal_cost" msprop:Generator_ColumnPropNameInTable="Meal_costColumn" msprop:Generator_UserColumnName="Meal_cost" type="xs:decimal" />
+              <xs:element name="Category_name" msprop:Generator_ColumnVarNameInTable="columnCategory_name" msprop:Generator_ColumnPropNameInRow="Category_name" msprop:Generator_ColumnPropNameInTable="Category_nameColumn" msprop:Generator_UserColumnName="Category_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Meal_View" />
+      <xs:field xpath="mstns:Meal_id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
